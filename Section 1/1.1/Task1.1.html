@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 1</title>
+  </head>
+  <body>
+    <script>
+            class SmartArray {
+              constructor(object) {
+                this.object = object;
+              }
+              toArray() {
+                return this.object;
+              }
+
+              groupBy(type, value) {
+                return this.object.filter((item) => item[type] === value);
+              }
+
+              findDuplicates(key){
+                  const seen = new Map();
+                  const duplicates = [];
+
+                  this.object.forEach(element => {
+                      if(seen.has(element[key])){
+                          duplicates.push(element)
+                      }else{
+                          seen.set(element[key], true)
+                      }
+                  });
+
+                  return duplicates;
+                }
+
+
+            }
+
+            const users = new SmartArray([
+              { id: 1, name: "Alice", role: "admin" },
+              { id: 2, name: "Bob", role: "user" },
+              { id: 3, name: "Charlie", role: "user" },
+              { id: 4, name: "hello", role: "user" }
+            ]);
+            function toCSV(a){
+                    return users.toArray().map(item => `${item.id},${item.name},${item.role} `).join("\n")
+                  }
+            let a = Math.floor(Math.random() * 3 + 1);
+      console.log(users.groupBy('role', 'admin'));
+      console.log(users.findDuplicates('role'));
+      console.log(toCSV(users));
+    </script>
+  </body>
+</html>

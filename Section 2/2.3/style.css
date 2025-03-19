@@ -1,0 +1,101 @@
+/* style.css */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    margin-top: 20px;
+    width: 90%;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 9px rgba(0, 0, 0, 0.1);
+    text-align: center;
+
+}
+
+.add-task{
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    gap:8px;
+}
+
+.add-task input{
+    width: 30%;
+    padding: 5px;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+.add-task button{
+    padding: 5px 10px;
+    background-color:  #286536;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.add-task button:hover{
+    background-color: #218838;
+}
+
+.kanban{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+.column{
+    flex:1 ;
+    /* width: 100%; */
+    background-color: #fff;
+    padding:15px;
+    border-radius: 8px;
+    box-shadow: 0px 5px 9px rgba(0, 0, 0, 0.2);
+    min-height: 300px;
+    text-align: center;
+}
+
+.column h2{
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #2a543e;
+    color: white;
+    border-radius: 5px;
+}
+
+.task{
+    /* background-color: #fff; */
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: move;
+    font-family: 15px;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+}
+
+.task:active{
+    cursor: grabbing;
+    opacity: 0.6;
+}
+
+/* .actions button{
+    display: flex;
+    justify-content: space-between;
+} */
+

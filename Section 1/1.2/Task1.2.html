@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task1.2</title>
+  </head>
+  <body>
+    <script>
+      class Tasks {
+        constructor(id, duration, deadline, priority) {
+          this.id = id;
+          this.duration = duration;
+          this.deadline = deadline;
+          this.priority = priority;
+        }
+      }
+
+      let arr = [];
+      function addtask(id, duration, deadline, priority) {
+        if (arr.find((task) => task.id === id)) {
+          console.log(`Task with ID ${id} already exists`);
+          return;
+        }
+        if (priority < 1 || priority > 5) {
+          console.log(
+            `Priority ${priority} is invalid. It should be between 1 and 5.`
+          );
+          return;
+        }
+
+        let newSchedule = new Tasks(id, duration, deadline, priority);
+        arr.push(newSchedule);
+      }
+
+      function optimizeSchedule(task){
+        return task.sort((first,second) => {
+            if(first.deadline !== second.deadline){
+                return first.deadline - second.deadline;
+            }
+
+           return second.priority - first.priority;
+        })
+
+      }
+
+      addtask(1, 5, 8, 9);
+      addtask(2, 8, 3, 5);
+      addtask(3, 7, 2, 3);
+      addtask(1, 5, 3, 2);
+      addtask(4, 6, 9, 0);
+      console.log(arr);
+    </script>
+  </body>
+</html>
